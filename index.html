@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sbs</title>
+    <style>
+        *{margin: 0;}
+        .first{
+            padding: 40px 20px;
+        }
+        nav{
+            display: flex;
+            gap:150px;
+            padding-bottom: 45px;
+            
+        }
+        hr{
+            display: none;
+        }
+        .items{
+            display: flex;
+            gap:1px;
+            padding-left: 100px;
+            padding-right: 50px;
+        }
+        .items li{
+            list-style-type: none;
+            color: black;
+            background-color: white;
+            padding: 20px;
+            border-radius:20px;
+            transition: background-color 1s;
+        }
+        .items li:hover {
+            background-color: orangered;
+        }
+        .items a{
+            text-decoration: none; 
+        }
+        #home{
+            color: white;
+            background-color: orangered;
+            padding: 20px;
+            border-radius:20px;
+        }
+        .icons{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            color: grey;
+        }
+        .section1{
+            display: flex;
+            gap: 100px;
+
+        }
+        .section1 img{
+            padding-bottom: 30px;
+        }
+        .section1 h1{
+            font-size: 70px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 50%;
+            padding-right: 180px;
+            padding-bottom: 5px;
+        }
+        .section1 a{
+            padding: 50px 0;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 2s;
+            color: black;
+            
+        }
+        .section1 a::after{
+            content: "";
+            background-color: orange;
+            height: 2px;
+            width: 20px;
+            position: relative;
+        }
+        .section1 a:hover,.section3-sub1 a:hover{
+            color: orangered;
+        }
+        .arrow{
+            padding-left: 40px;
+            display: flex;
+            gap: 20px;
+            
+        }
+        .arrow1,.arrow2{
+            transition: background-color 1s;
+        }
+        .arrow svg{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 20px;
+            color: white;
+            background-color: rgb(72, 43, 236);
+            border-radius: 50%;
+            
+        }
+        .arrow1:hover,.arrow2:hover {
+            background-color: orangered;
+        }
+        .section2,.section4,.testimonials{
+            padding: 60px 0;
+        }
+        .section2 h1,.section4 h1{
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+        .section2 p,.section4 p{
+            color: rgba(26, 25, 25, 0.5);
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .classes{
+            display: flex;
+            gap:30px;
+            padding: 20px;
+        }
+        .class1,.class3{
+            background-color: orangered;
+            padding: 30px 30px;
+            border-radius: 8px;
+        }
+        .class2{
+            background-color: rgb(72, 43, 236);
+            padding: 30px 30px;
+            border-radius: 8px;
+        }
+        .class1 p,.class2 p,.class3 p{
+            color: white;
+            font-size: 18px;
+        }
+        .class1 h3,.class2 h3,.class3 h3{
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+        .class1 img,.class2 img,.class3 img{
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            display: block;
+            padding-bottom: 25px;
+        }
+        .classes1 a,.classes2 a,.classes3 a{
+            text-decoration: none;
+            display: block;
+            padding-top: 50px;
+            color: black;
+            font-size:16px ;
+            transition: color .5s;
+        }
+        .classes1 a:hover,.classes2 a:hover,.classes3 a:hover{
+            color: orangered;
+        }
+        .section3{
+            background-image: url("about_bg.jpg");
+            background-attachment: fixed;
+            display: flex;
+        }
+        .section3-sub1{
+            padding: 100px 60px;
+            width: 40%;
+        }
+        .section3-sub1 h1{
+            font-size: 50px;
+            color: white;
+        }
+        .section3-sub1 p{
+            color: white;
+            font-size: 20px;
+            padding: 30px 0;
+            
+        }
+        .section3-sub1 a{
+            text-decoration: none;
+            color: white;
+            transition: color.5s;
+        }
+        .section3-sub2 img{
+            width: 100%;
+        }
+        
+        .skate-video{
+            display: flex;
+            gap: 20px;
+        }
+        .video1 a,.video2 a,.video3 a{
+            text-decoration: none;
+            color: black;
+            transition: color .5s;
+            text-align: start;
+        }
+        .video1 a:hover,.video2 a:hover,.video3 a:hover{
+            color: orangered;
+        }
+        .skate-shop{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 60px;
+            
+        }
+        .shop-content{
+            width: 50%;
+            padding-top: 100px;
+        }
+        .skate-shop img{
+            width: 90%;
+            height: 90%;
+            
+        }
+        .shop-content h1{
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: start;
+           
+        }
+        .shop-content p{
+            color: rgba(26, 25, 25, 0.5);
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: start;
+            padding-bottom: 60px;
+            padding-top: 25px;
+        }
+        .shop-content a{
+            text-decoration: none;
+            color: black;
+            transition: color .5s;
+        }
+        .shop-content a:hover{
+            color: orangered;
+        }
+        .testimonials h1{
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        .testimonials{
+            background-color: blue;
+        }
+        .reviews{
+            display: flex;
+            gap: 20px;
+            padding: 0 50px;
+        }
+        .review1,.review3{
+            background-color: orangered;
+            border-radius: 10px;
+            color: white;
+            width:60%
+        }
+        .review2{
+            background-color: white;
+            border-radius: 10px;
+            color: black;
+            width:100%
+        }
+        .review1 h3,.review3 h3{
+            padding-top: 20px;
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+        .review2 h3{
+            padding-top: 20px;
+            color: black;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: 25px;
+        }
+        .review1 img,.review2 img,.review3 img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px 0;
+        }
+        .contact{
+            display: flex;
+            padding: 100px 50px;
+        }
+        .contactus{
+            padding-right: 100px;
+            border-right: 1px solid orangered;
+        }
+        .contactus h3,.newsletter h3{
+            color: black;
+            padding-bottom: 10px;
+            font-size: 35px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+            padding-bottom: 20px;
+            
+        }
+        .location,.call,.email{
+            display: flex;
+        }
+        .location svg,.call svg,.email svg{
+            padding-right: 15px;
+        }
+        .newsletter{
+            padding-left: 60px;
+        }
+        .newsletter form input[type=email]{
+            padding: 15px ;
+            border: none;
+            font-size: 20px;
+           
+        }
+        .newsletter form{
+            padding-bottom: 25px;
+        }
+        .newsletter button{
+            background-color: orangered;
+            color: white;
+            padding:15px 50px;
+            border: none;
+            border-radius: 8px;
+        }
+        .links{
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+        .links svg{
+            padding: 10px;
+            border-radius: 50%;
+            background-color: black;
+            transition: background-color .5s;
+            
+        }
+        .links svg:hover{
+            background-color: violet;
+        }
+        .items1{
+            display: flex;
+            gap:20px;
+        }
+        .items1 li{
+            list-style-type: none;
+            
+        }
+        .item1 ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .items1 a{
+            text-decoration: none; 
+            color: black;
+            font-size: 20px;
+            padding-left: 0;
+        }
+
+
+
+
+        @media screen and (max-width:750px){
+            nav{
+                flex-direction: column;
+                gap:25px;
+            }
+            
+            nav a{
+                padding-bottom: 15px;
+            }
+            .items{
+                flex-direction: column;
+            }
+            hr{
+                display: none;
+                border: 1px solid orangered;
+            }
+            .items li{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                padding: 5px;
+                transition: background-color 1s;
+            }
+            
+            .items{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            .logo a{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+            }
+            .icons{
+                display: none;
+            }
+            .section1{
+                flex-direction: column;
+                gap: 10px;
+            }
+            #image1{
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                display: block;
+                margin-top: 1px;
+            }
+            .arrow{
+                gap: 40px;
+                padding-left: 0;
+            }
+            .classes,.section3{
+                flex-direction: column;
+            }.skate-video{
+                flex-direction: column;
+                gap: 0px;
+            }
+            .video1{
+                text-align: start;
+            }
+            .section3-sub1{
+                padding-top: 100px ;
+                padding: 20px;
+                padding-right: 20px;
+                padding-bottom: 30px;
+                width: 100%;
+            }
+            
+            .section3-sub1 p{
+                color: white;
+                font-size: 20px;
+                padding: 30px 0;
+                
+            }
+            .section3-sub1 a{
+                padding-bottom: 10px;
+            }
+            .section3-sub2 img{
+                padding-top: 0;
+                width: 100%;
+            }
+            .skate-shop{
+                flex-direction: column-reverse;
+                padding-top: 10px;
+            }
+            .shop-content{
+                width: 100%;
+                padding-top: 100px;
+            }
+            .skate-shop img{
+                width: 90%;
+                height: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+            .reviews{
+                flex-direction: column;
+                padding: 50px 50px;
+
+            }
+            .review1,.review2,.review3{
+                width: 100%;
+            }
+            .contact{
+                flex-direction: column;
+                padding: 50px ;
+                
+            }
+            .contactus{
+                border-right: none;
+            }
+            .newsletter{
+                padding-left: 0;
+            }
+            .links{
+                flex-direction: column;
+            }
+                    
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="first">
+        <nav>
+            <div class="logo">
+                <a href=""><img src="..\images\logo.png" alt=""></a>
+                
+            </div>
+            <div class="nav-links">
+                <ul class="items">
+                    <li id="home"><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">SKATING</a></li>
+                    <li><a href="">SHOP</a></li>
+                    <li><a href="">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"  style="padding-right:25px;">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+                
+            </div>
+        </nav>
+        <hr>
+        <section class="section1">
+            <div>
+                <img src="..\images\top_icon.png" alt="">
+                <h1>Skating</h1>
+                <h1>Board</h1>
+                <h1>School</h1>
+                <a href="">Read More</a>
+            </div>
+            <div>
+                <img id="image1" src="..\images\banner_img.png" alt="" height="100%" width="90%">
+            </div>
+            
+        </section>
+        <div class="arrow">
+            <svg class="arrow1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>
+              <svg class="arrow2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg>
+
+        </div>
+        <section class="section2">
+            <h1>Our Skating Class</h1>
+            <p>There are many variation of passages of lorem</p>
+            <div class="classes">
+                <div class="classes1">
+                    <div class="class1">
+                        <img src="..\images\class1.png" alt="">
+                        <h3>Skateboard</h3>
+                        <p>There are amany variations of passages of Lorem Ipsum available, 
+                            but the majority have suffered from alteration there are many 
+                            variations
+                        </p>
+                    </div>
+                
+                <a href=""><b>READ MORE</b></a>
+                </div>
+                <div class="classes2">
+                    <div class="class2">
+                        <img src="..\images\class2.png" alt="">
+                        <h3>Skateboard</h3>
+                        <p>There are amany variations of passages of Lorem Ipsum available, 
+                            but the majority have suffered from alteration there are many 
+                            variations
+                        </p>
+                    </div>
+                    <a href=""><b>READ MORE</b></a>
+                </div>
+
+                <div class="classes3">
+                    <div class="class3">
+                        <img src="..\images\class3.png" alt="">
+                        <h3>Skateboard</h3>
+                        <p>There are amany variations of passages of Lorem Ipsum available, 
+                            but the majority have suffered from alteration there are many 
+                            variations
+                        </p>
+                    </div>
+                    <a href=""><b>READ MORE</b></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="section3-sub1">
+                <h1>About</h1>
+                <h1>Skating</h1>
+                <h1>School</h1>
+                <p>There are many variations of passages of Lorem Ipsum available, but the 
+                    majority have suffered alteration there are many variation there are many variation of passages
+                    of Lorem Ipsum available, but the majority have suffered alteration There are many variations
+                </p>
+                <a href=""><b>READ MORE</b></a>
+            </div>
+            <div class="section3-sub2">
+                <img src="..\images\about.png" alt="">
+            </div>
+        </section>
+
+        <section class="section4">
+            <h1>Our Skating Class</h1>
+            <p>There are many variation of passages of lorem</p>
+            <div class="skate-video">
+                <div class="video1">
+                    <img src="..\images\sakt1.png" alt="">
+                    <a href=""><b>SEE MORE</b></a>
+                </div>
+                <div class="video2">
+                    <img src="..\images\sakt2.png" alt="">
+                    <a href=""><b>SEE MORE</b></a>
+                </div>
+                <div class="video3">
+                    <img src="..\images\sakt3.png" alt="">
+                    <a href=""><b>SEE MORE</b></a>
+                </div>
+            </div>
+            <div class="skate-shop">
+                <div>
+                    <img src="..\images\shop.png" alt="">
+                </div>
+                <div class="shop-content">
+                    <h1>Our Skate</h1>
+                    <h1>Shop</h1>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration There are many variations There are many variations of passages of Lorem Ipsumavailable,
+                        but the majority have suffered alteration There are many variations
+                    </p>
+                    <a href=""><b>BUY NOW</b></a>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h1 style="color: white;">Testimonials</h1>
+                <div class="reviews">
+                    <div class="review1">
+                        <h3>Michale</h3>
+                        <img src="..\images\te.png" alt="">
+                        <p>humor, or randomised words which don't look even slightly believable.If you are </p>
+                    </div>
+                    <div class="review2">
+                        <h3>Disol</h3>
+                        <img src="..\images\te2.png" alt="">
+                        <p>humor, or randomised words which don't look even slightly believable.If you are not going to use
+                            a passages of Lorem Ipsum, you need to be sure  </p>
+                    </div>
+                    <div class="review3">
+                        <h3>Jone Lo</h3>
+                        <img src="..\images\te.png" alt="">
+                        <p>humor, or randomised words which don't look even slightly believable.If you are </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact">
+                <div class="contactus">
+                    <h3>Contact Us</h3>
+                    <div class="location">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                        </svg>
+                        <p>locations</p>
+                    </div>
+                    <div class="call">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                          </svg>
+                          <p>call +09865432908</p>
+                    </div>
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                          </svg>
+                          <p>demo@gmail.com</p>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h3>Newsletter</h3>
+                    <form action="">
+                        <input type="email" placeholder="Enter your email">
+                        <input type="email" placeholder="Enter your email">
+                        <button>SUBSCRIBE</button>
+                    </form>
+                    <div class="links">
+                        <div>
+                            <h3>Useful Links</h3>
+                            <ul class="items1">
+                                <li ><a href="">Home</a></li>
+                                <li><a href="">About</a></li>
+                                <li><a href="">Skating</a></li>
+                                <li><a href="">Shop</a></li>
+                                <li><a href="">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
+    </div>
+    
+</body>
+</html>
